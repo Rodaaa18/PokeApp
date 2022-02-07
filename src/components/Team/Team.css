@@ -29,6 +29,7 @@
   font-size: 2em;
   font-weight: bold;
   margin: 0;
+  color: white;
 }
 .buttons {
   display: flex;
@@ -45,6 +46,7 @@
   font-size: 3em;
   margin-top: 4vh;
   animation: MoveUpDown 5s linear infinite;
+  color: white;
 }
 
 @keyframes MoveUpDown {

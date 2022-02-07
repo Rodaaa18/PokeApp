@@ -4,21 +4,21 @@ import { removePoke } from "../../redux";
 import Powerstat from "./Powerstat";
 import "./Team.css";
 const Team = () => {
-  const heroTeam = useSelector((state) => state.hero.heroTeam);
+  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
   const dispatch = useDispatch();
 
   return (
     <div id="team">
-      {heroTeam && heroTeam.length ? (
-        heroTeam.map((hero) => {
+      {pokeTeam && pokeTeam.length ? (
+        pokeTeam.map((poke) => {
           return (
-            <div key={`team${hero.id}`} className="teamMember">
+            <div key={`team${poke.id}`} className="teamMember">
               <div className="heroNameContainer">
-                <h1 className="heroName">{hero.name}</h1>
+                <h1 className="heroName">{poke.name}</h1>
               </div>
               <img
-                src={hero.image.url}
-                alt={hero.name}
+                src={poke.sprites.front_default}
+                alt={poke.name}
                 draggable={false}
                 className="teamMemberImg"
               />
@@ -31,13 +31,13 @@ const Team = () => {
                 >
                   Powerstats
                 </button>
-                <Powerstat hero={hero} />
-                <Link to={`challenge-react/${hero.id}`}>
+                <Powerstat hero={poke} />
+                <Link to={`challenge-react/${poke.id}`}>
                   <button className="btn btn-dark btnTeam">Detalles</button>
                 </Link>
                 <button
                   className="btn btn-dark btnTeam"
-                  onClick={() => dispatch(removePoke(hero))}
+                  onClick={() => dispatch(removePoke(poke))}
                 >
                   Eliminar
                 </button>
