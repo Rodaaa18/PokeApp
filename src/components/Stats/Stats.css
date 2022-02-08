@@ -5,7 +5,7 @@
   width: 30vw;
 }
 .statsDropdown {
-  background-color: #212529fd;
+  background-color: rgb(54, 54, 100);
   min-width: 60vw;
   padding: 0;
   border-radius: 0.5em;
