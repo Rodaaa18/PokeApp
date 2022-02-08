@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import "./Stats.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Stats = () => {
   const pokeTeam = useSelector((state) => state.poke.heroTeam);
@@ -67,7 +68,7 @@ const Stats = () => {
     <div className="container">
       <button
         type="button"
-        className="btn btn-dark dropdown-toggle statsBtn"
+        className=" dropdown-toggle btnStats"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
@@ -106,7 +107,7 @@ const Stats = () => {
             {totalAtaqueEspecial}
           </p>
           <p className="col">
-            <strong>Poder: </strong>
+            <strong>Vida: </strong>
             {totalVida}
           </p>
         </div>

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Details.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Details = ({ match }) => {
   const history = useHistory();

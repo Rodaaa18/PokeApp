@@ -1,4 +1,5 @@
 import "./Powerstat.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Powerstat = (hero) => {
   // si la api no trae data, devuelve no disponible
@@ -17,7 +18,7 @@ const Powerstat = (hero) => {
         style={{ width: `${hero.hero.stats[1].base_stat}%` }}
         aria-valuenow={hero.hero.stats[1].base_stat}
         aria-valuemin="0"
-        aria-valuemax="100"
+        aria-valuemax="200"
       >
         <li className="powerstat">
           <strong>Ataque: </strong>

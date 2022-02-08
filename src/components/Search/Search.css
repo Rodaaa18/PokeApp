@@ -8,6 +8,7 @@
   border-radius: 3em;
   flex-direction: row;
   color: white;
+  font-family: "Roboto", sans-serif;
 }
 .btnBuscar {
   color: #d1d0d0;
@@ -22,6 +23,7 @@
   padding-bottom: 5px;
   border-radius: 15px;
   justify-content: center;
+  font-family: "Roboto", sans-serif;
 }
 .heroCard {
   display: flex;
@@ -31,6 +33,7 @@
   text-align: center;
   border: 1px solid white;
   color: white;
+  font-family: "Roboto", sans-serif;
 }
 .alert-success {
   background-color: rgba(33, 78, 48);
@@ -57,6 +60,7 @@
 }
 .backToTeam {
   font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 .field {
   margin: 5px;
@@ -64,11 +68,13 @@
   display: flex;
   flex-direction: row;
   justify-content: right;
+  font-family: "Roboto", sans-serif;
 }
 @media (max-width: 1050px) {
   .addSuperHero {
     font-size: 1em;
     text-align: center;
+    font-family: "Roboto", sans-serif;
   }
   .searchResults {
     width: auto;
@@ -82,5 +88,6 @@
 @media (max-width: 400px) {
   .addSuperHero {
     font-size: 0.5em;
+    font-family: "Roboto", sans-serif;
   }
 }

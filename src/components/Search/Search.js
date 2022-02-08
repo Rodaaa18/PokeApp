@@ -8,6 +8,7 @@ import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { validAligment, noRepeat } from "./ValidPoke";
 import "./Search.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Search = () => {
   //history para boton regresar
@@ -74,7 +75,10 @@ const Search = () => {
   return (
     <div>
       <Nav />
-      <button className="btnBuscar" onClick={() => history.goBack()}>
+      <button
+        className="btn btn-dark btnBuscar"
+        onClick={() => history.goBack()}
+      >
         Volver al equipo
       </button>
       <Formik
@@ -83,7 +87,7 @@ const Search = () => {
           searchPoke(value.search);
         }}
       >
-        <Form className="g-3 align-items-center searchContainer">
+        <Form className="row g-3 align-items-center searchContainer">
           <div className="col-auto">
             <label htmlFor="search" className="addSuperHero">
               Agregar Pokemon

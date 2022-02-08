@@ -7,22 +7,25 @@
 .statsDropdown {
   background-color: #212529fd;
   min-width: 60vw;
-  color: white;
   padding: 0;
   border-radius: 0.5em;
   text-align: center;
   border: 1px solid #585b5e85;
+  color: white;
 }
 .col {
   margin: 5px;
   font-size: 1em;
   animation: opacity 2s;
   animation-iteration-count: initial;
+  font-family: "Roboto", sans-serif;
 }
 .teamType {
   font-size: 2em;
   padding: 0;
   border-bottom: 1px #585b5e solid;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
 }
 .statsBtn {
   font-weight: bold;
@@ -38,4 +41,19 @@
   .statsBtn {
     font-size: 1em;
   }
+}
+.btnStats {
+  color: #d1d0d0;
+  background-color: rgb(30, 35, 82);
+  border: 1px solid #585b5e;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 15px;
+  justify-content: center;
 }

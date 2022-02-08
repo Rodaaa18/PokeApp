@@ -1,24 +1,25 @@
 .powerStatDropdown {
-  background-color: #14171ae0;
-  width: 280px;
+  background-color: transparent;
+  width: 350px;
   padding: 0;
   border-radius: 0.5em;
   position: absolute;
   inset: auto auto 0px 0px !important;
-  margin: 0px;
+  margin: 1px;
   transform: translate(0px, -40px) !important;
+  font-family: "Roboto", sans-serif;
 }
 .powerstat {
   text-align: start;
-  color: white;
+  color: rgb(255, 255, 255);
   margin: 5px;
   font-size: 1.5em;
 }
 .progress-bar {
   overflow: visible;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   background-color: rgba(77, 77, 114);
-  border-radius: 0.1em;
+  border-radius: 0.2em;
   animation: opacity 2s;
   animation-iteration-count: initial;
 }

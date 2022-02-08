@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Results = ({ recentSearch, validateAddedPoke, setIsLoading }) => {
   return (

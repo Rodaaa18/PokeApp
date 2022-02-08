@@ -8,6 +8,7 @@
   align-self: center;
   flex-direction: row;
   color: white;
+  font-family: "Roboto", sans-serif;
 }
 #detailsImg {
   max-width: 400px;
@@ -25,6 +26,7 @@
   font-size: 3em;
   text-align: center;
   font-weight: bold;
+  font-family: "Roboto", sans-serif;
 }
 .info {
   font-size: 1.1em;

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removePoke } from "../../redux";
 import Powerstat from "./Powerstat";
 import "./Team.css";
+import "bootstrap/dist/css/bootstrap.css";
 const Team = () => {
   const pokeTeam = useSelector((state) => state.poke.heroTeam);
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const Team = () => {
                   <button className="btn btn-dark btnTeam">Detalles</button>
                 </Link>
                 <button
-                  className="btn btn-dark btnTeam"
+                  className=" btnTeam"
                   onClick={() => dispatch(removePoke(poke))}
                 >
                   Eliminar
