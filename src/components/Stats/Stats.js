@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import "./Stats.css";
 
 const Stats = () => {
-  const pokeTeam = useSelector((state) => state.hero.heroTeam);
+  const pokeTeam = useSelector((state) => state.poke.heroTeam);
   let [
     totalPeso,
     totalAltura,
@@ -23,13 +23,14 @@ const Stats = () => {
 
   //sumatoria de statss
   pokeTeam.forEach((hero) => {
+    console.log(hero);
     totalPeso += validStat(parseInt(hero.weight));
     totalAltura += validStat(parseInt(hero.height));
-    totalAtaque += validStat(parseInt(hero.stats["attack"]));
-    totalDefensa += validStat(parseInt(hero.stats["defense"]));
-    totalAtaqueEspecial += validStat(parseInt(hero.stats["special-attack"]));
-    totalVida += validStat(parseInt(hero.stats["hp"]));
-    totalVelocidad += validStat(parseInt(hero.stats["speed"]));
+    totalAtaque += validStat(parseInt(hero.stats[1].base_stat));
+    totalDefensa += validStat(parseInt(hero.stats[2].base_stat));
+    totalAtaqueEspecial += validStat(parseInt(hero.stats[3].base_stat));
+    totalVida += validStat(parseInt(hero.stats[0].base_stat));
+    totalVelocidad += validStat(parseInt(hero.stats[5].base_stat));
   });
 
   const highestStat = Math.max(

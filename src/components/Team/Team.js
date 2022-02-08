@@ -4,7 +4,7 @@ import { removePoke } from "../../redux";
 import Powerstat from "./Powerstat";
 import "./Team.css";
 const Team = () => {
-  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
+  const pokeTeam = useSelector((state) => state.poke.heroTeam);
   const dispatch = useDispatch();
 
   return (
@@ -46,7 +46,7 @@ const Team = () => {
           );
         })
       ) : (
-        <h1 id="noTeam">Agrega héroes a tu equipo!</h1>
+        <h1 id="noTeam">Agrega Pokemons a tu equipo!</h1>
       )}
     </div>
   );

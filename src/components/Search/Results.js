@@ -1,46 +1,38 @@
 import { Link } from "react-router-dom";
 
 const Results = ({ recentSearch, validateAddedPoke, setIsLoading }) => {
-  console.log(recentSearch);
-
-  const length = (obj) => {
-    let leOfO = Object.keys(obj).length;
-    console.log(leOfO);
-  };
-
   return (
-    <div className="searchResults">
-      {recentSearch && recentSearch >= length(recentSearch)
-        ? recentSearch.map((poke) => {
-            console.log(poke);
-            return (
-              <div key={poke.id} className="teamMember">
-                <div className="heroNameContainer">
-                  <h1 className="pokeName">{poke.name}</h1>
-                </div>
-                <img
-                  src={poke.sprites.front_default}
-                  alt={poke.name}
-                  draggable={false}
-                  onLoad={() => setIsLoading(false)}
-                  className="teamMemberImg"
-                />
-                <div className="buttons">
-                  <Link to={`/search/${poke.id}`}>
-                    <button className="btn btn-dark btnTeam">Detalles</button>
-                  </Link>
-                  <button
-                    className="btn btn-dark btnTeam"
-                    onClick={() => validateAddedPoke(poke)}
-                  >
-                    Agregar
-                  </button>
-                </div>
+    <>
+      <div>
+        {recentSearch.id > 0 ? (
+          <div className="searchResults">
+            <div key={recentSearch.id} className="teamMember">
+              <div className="heroNameContainer">
+                <h1 className="pokeName">{recentSearch.name}</h1>
               </div>
-            );
-          })
-        : console.log("puto")}
-    </div>
+              <img
+                src={recentSearch.sprites.front_default}
+                alt={recentSearch.name}
+                draggable={false}
+                onLoad={() => setIsLoading(false)}
+                className="teamMemberImg"
+              />
+              <div className="buttons">
+                <Link to={`/search/${recentSearch.id}`}>
+                  <button className="btnTeam">Detalles</button>
+                </Link>
+                <button
+                  className="btnTeam"
+                  onClick={() => validateAddedPoke(recentSearch)}
+                >
+                  Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </>
   );
 };
 export default Results;

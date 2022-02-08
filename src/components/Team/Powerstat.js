@@ -1,6 +1,6 @@
 import "./Powerstat.css";
 
-const Powerstat = ({ poke }) => {
+const Powerstat = (hero) => {
   // si la api no trae data, devuelve no disponible
   const validStat = (powerStat) => {
     if (powerStat !== "null") {
@@ -8,71 +8,72 @@ const Powerstat = ({ poke }) => {
     }
     return "No Disponible";
   };
+
   return (
     <ul className="dropdown-menu powerStatDropdown">
       <div
         className="progress-bar"
         role="progressbar"
-        style={{ width: `${poke.stats["attack"]}%` }}
-        aria-valuenow={poke.stats["attack"]}
+        style={{ width: `${hero.hero.stats[1].base_stat}%` }}
+        aria-valuenow={hero.hero.stats[1].base_stat}
         aria-valuemin="0"
         aria-valuemax="100"
       >
         <li className="powerstat">
           <strong>Ataque: </strong>
-          {validStat(poke.stats["attack"])}
+          {validStat(hero.hero.stats[1].base_stat)}
         </li>
       </div>
       <div
         className="progress-bar"
         role="progressbar"
-        style={{ width: `${poke.stats["defense"]}%` }}
-        aria-valuenow={poke.stats["defense"]}
+        style={{ width: `${hero.hero.stats[2].base_stat}%` }}
+        aria-valuenow={hero.hero.stats[2].base_stat}
         aria-valuemin="0"
         aria-valuemax="100"
       >
         <li className="powerstat">
           <strong>Defensa: </strong>
-          {validStat(poke.stats["defense"])}
+          {validStat(hero.hero.stats[2].base_stat)}
         </li>
       </div>
       <div
         className="progress-bar"
         role="progressbar"
-        style={{ width: `${poke.stats["special-attack"]}%` }}
-        aria-valuenow={poke.stats["special-attack"]}
+        style={{ width: `${hero.hero.stats[3].base_stat}%` }}
+        aria-valuenow={hero.hero.stats[3].base_stat}
         aria-valuemin="0"
         aria-valuemax="100"
       >
         <li className="powerstat">
           <strong>Ataque Especial: </strong>
-          {validStat(poke.stats["special-attack"])}
+          {validStat(hero.hero.stats[3].base_stat)}
         </li>
       </div>
       <div
         className="progress-bar"
         role="progressbar"
-        style={{ width: `${poke.stats["hp"]}%` }}
-        aria-valuenow={poke.stats["hp"]}
+        style={{ width: `${hero.hero.stats[0].base_stat}%` }}
+        aria-valuenow={hero.hero.stats[0].base_stat}
         aria-valuemin="0"
         aria-valuemax="100"
       >
         <li className="powerstat">
           <strong>Vida: </strong>
-          {validStat(poke.stats["hp"])}
+          {validStat(hero.hero.stats[0].base_stat)}
         </li>
       </div>
       <div
         className="progress-bar"
         role="progressbar"
-        style={{ width: `${poke.stats["speed"]}%` }}
-        aria-valuenow={poke.stats["speed"]}
+        style={{ width: `${hero.hero.stats[5].base_stat}%` }}
+        aria-valuenow={hero.hero.stats[5].base_stat}
         aria-valuemin="0"
         aria-valuemax="100"
       >
         <li className="powerstat">
           <strong>Velocidad: </strong>
-          {validStat(poke.stats["speed"])}
+          {validStat(hero.hero.stats[5].base_stat)}
         </li>
       </div>
     </ul>

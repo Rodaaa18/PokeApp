@@ -8,9 +8,8 @@ import Team from "../Team/Team";
 import "./Home.css";
 
 const Home = () => {
-  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
+  const pokeTeam = useSelector((state) => state.poke.heroTeam);
   const dispatch = useDispatch();
-  console.log(pokeTeam);
 
   //delete recent search after loading home
   useEffect(() => {
@@ -26,10 +25,9 @@ const Home = () => {
             <h1 id="teamTitle">Tu equipo</h1>
             {pokeTeam && pokeTeam.length > 0 ? <Stats /> : null}
           </div>
-          {pokeTeam === (null || undefined) ||
-          (pokeTeam && pokeTeam.length !== 6) ? (
+          {pokeTeam === null || (pokeTeam && pokeTeam.length !== 6) ? (
             <Link to="/search">
-              <button className="btn addHero">Agregar Poke</button>
+              <button className="addHero">Agregar Poke</button>
             </Link>
           ) : null}
         </div>

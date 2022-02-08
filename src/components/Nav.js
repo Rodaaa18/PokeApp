@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/pokelogo.png";
+import "./Nav.css";
 
 const Nav = () => {
   return (
@@ -8,8 +9,7 @@ const Nav = () => {
       <Link to="/challenge-react">
         <img className="logo" src={logo} alt="pokemon" />
       </Link>
-      <div></div>
-      <div>❤</div>
+      <div className="logo">❤</div>
     </nav>
   );
 };

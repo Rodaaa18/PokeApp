@@ -6,14 +6,14 @@ import { addPoke, updateRecentSearch } from "../../redux";
 import { Redirect, useHistory } from "react-router";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
-import { noRepeat, validAlignment } from "./ValidPoke";
+import { validAligment, noRepeat } from "./ValidPoke";
 import "./Search.css";
 
 const Search = () => {
   //history para boton regresar
   const history = useHistory();
   //redux hooks
-  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
+  const pokeTeam = useSelector((state) => state.poke.heroTeam);
   const recentSearch = useSelector((state) => state.search.recentSearch);
   const dispatch = useDispatch();
 
@@ -39,7 +39,7 @@ const Search = () => {
         let search = results.data;
         // console.log(search);
         dispatch(updateRecentSearch(search));
-        setErrorMessage("paso");
+        setErrorMessage("");
         // si no se encuentran, se muestra error
       } else {
         setIsLoading(false);
@@ -47,14 +47,15 @@ const Search = () => {
       }
     }
   };
-  console.log(errorMessage);
+
   // funcion para validar pokemon seleccionado
   const validateAddedPoke = (poke) => {
+    console.log(pokeTeam);
     if (errorMessage) {
       setErrorMessage("");
     }
     // asignacion de valor error message
-    validAlignment(pokeTeam, poke) ||
+    validAligment(pokeTeam, poke) ||
       setErrorMessage(
         "No podés elegir más de tres pokemones de la misma alineación."
       );
@@ -62,21 +63,18 @@ const Search = () => {
     noRepeat(pokeTeam, poke) ||
       setErrorMessage("No podés elegir el mismo pokemon más de una vez.");
 
-    if (noRepeat(pokeTeam, poke) && validAlignment(pokeTeam, poke)) {
+    if (noRepeat(pokeTeam, poke) && validAligment(pokeTeam, poke)) {
       setValidSelection(true);
       dispatch(addPoke(poke));
     } else {
       setValidSelection(false);
     }
   };
-  //   console.log(setIsLoading);
+
   return (
     <div>
       <Nav />
-      <button
-        className="btn btn-dark backToTeam"
-        onClick={() => history.goBack()}
-      >
+      <button className="btnBuscar" onClick={() => history.goBack()}>
         Volver al equipo
       </button>
       <Formik
@@ -85,17 +83,17 @@ const Search = () => {
           searchPoke(value.search);
         }}
       >
-        <Form className="row g-3 align-items-center searchContainer">
+        <Form className="g-3 align-items-center searchContainer">
           <div className="col-auto">
-            <label htmlFor="search" className="form-label addSuperHero">
+            <label htmlFor="search" className="addSuperHero">
               Agregar Pokemon
             </label>
           </div>
           <div className="col-auto">
-            <Field name="search" type="text" className="form-control" />
+            <Field name="search" type="text" className="field" />
           </div>
           <div className="col-auto">
-            <button type="submit" className="btn btn-dark">
+            <button type="submit" className="btnBuscar">
               Buscar
             </button>
           </div>

@@ -20,6 +20,13 @@ const Details = ({ match }) => {
 
     setHeroDetails(fetchedData.data);
   };
+
+  const stats = () => {
+    const status = heroDetails.stats.map((stat) => {
+      return stat.stat.name + " " + stat.base_stat + ", ";
+    });
+    return status;
+  };
   console.log(heroDetails);
   return (
     <div>
@@ -45,10 +52,10 @@ const Details = ({ match }) => {
               <strong>Nombre completo:</strong> {heroDetails.name}
             </p>
             <p className="info">
-              <strong>Tipo:</strong> {heroDetails.types["name"]}
+              <strong>Tipo:</strong> {heroDetails.types[0].type.name}
             </p>
             <p className="info">
-              <strong>Stats:</strong> {heroDetails.stats["name"]}
+              <strong>Stats:</strong> {stats()}
             </p>
           </div>
         </div>

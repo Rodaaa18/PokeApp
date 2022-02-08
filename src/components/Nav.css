@@ -24,3 +24,14 @@ a {
     font-size: 1em;
   }
 }
+.logo {
+  width: 160px;
+  justify-content: center;
+}
+nav {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
