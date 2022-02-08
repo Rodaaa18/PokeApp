@@ -14,7 +14,7 @@ const Search = () => {
   //history para boton regresar
   const history = useHistory();
   //redux hooks
-  const pokeTeam = useSelector((state) => state.poke.heroTeam);
+  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
   const recentSearch = useSelector((state) => state.search.recentSearch);
   const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const Search = () => {
 
   // check if team is already full
   if (pokeTeam && pokeTeam.length === 6) {
-    return <Redirect to="/challenge-react" />;
+    return <Redirect to="/" />;
   }
 
   const searchPoke = async (value) => {
@@ -51,7 +51,6 @@ const Search = () => {
 
   // funcion para validar pokemon seleccionado
   const validateAddedPoke = (poke) => {
-    console.log(pokeTeam);
     if (errorMessage) {
       setErrorMessage("");
     }

@@ -3,7 +3,7 @@ import "./Stats.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Stats = () => {
-  const pokeTeam = useSelector((state) => state.poke.heroTeam);
+  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
   let [
     totalPeso,
     totalAltura,
@@ -23,15 +23,14 @@ const Stats = () => {
   };
 
   //sumatoria de statss
-  pokeTeam.forEach((hero) => {
-    console.log(hero);
-    totalPeso += validStat(parseInt(hero.weight));
-    totalAltura += validStat(parseInt(hero.height));
-    totalAtaque += validStat(parseInt(hero.stats[1].base_stat));
-    totalDefensa += validStat(parseInt(hero.stats[2].base_stat));
-    totalAtaqueEspecial += validStat(parseInt(hero.stats[3].base_stat));
-    totalVida += validStat(parseInt(hero.stats[0].base_stat));
-    totalVelocidad += validStat(parseInt(hero.stats[5].base_stat));
+  pokeTeam.forEach((poke) => {
+    totalPeso += validStat(parseInt(poke.weight));
+    totalAltura += validStat(parseInt(poke.height));
+    totalAtaque += validStat(parseInt(poke.stats[1].base_stat));
+    totalDefensa += validStat(parseInt(poke.stats[2].base_stat));
+    totalAtaqueEspecial += validStat(parseInt(poke.stats[3].base_stat));
+    totalVida += validStat(parseInt(poke.stats[0].base_stat));
+    totalVelocidad += validStat(parseInt(poke.stats[5].base_stat));
   });
 
   const highestStat = Math.max(

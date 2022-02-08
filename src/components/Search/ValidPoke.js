@@ -6,7 +6,6 @@ const noRepeat = (team, poke) => {
 };
 
 const validAligment = (team, poke) => {
-  console.log(team);
   const pokeAligment = poke.types;
   if (pokeAligment === "generation") {
     return false;

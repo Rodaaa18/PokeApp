@@ -5,7 +5,7 @@ import Powerstat from "./Powerstat";
 import "./Team.css";
 import "bootstrap/dist/css/bootstrap.css";
 const Team = () => {
-  const pokeTeam = useSelector((state) => state.poke.heroTeam);
+  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
   const dispatch = useDispatch();
 
   return (
@@ -32,7 +32,7 @@ const Team = () => {
                 >
                   Powerstats
                 </button>
-                <Powerstat hero={poke} />
+                <Powerstat poke={poke} />
                 <Link to={`/${poke.id}`}>
                   <button className="btn btn-dark btnTeam">Detalles</button>
                 </Link>

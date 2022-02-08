@@ -9,7 +9,7 @@ import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Home = () => {
-  const pokeTeam = useSelector((state) => state.poke.heroTeam);
+  const pokeTeam = useSelector((state) => state.poke.pokeTeam);
   const dispatch = useDispatch();
 
   //delete recent search after loading home

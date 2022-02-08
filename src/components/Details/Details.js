@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 const Details = ({ match }) => {
   const history = useHistory();
-  const [heroDetails, setHeroDetails] = useState([]);
+  const [pokeDetails, setPokeDetails] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -19,41 +19,41 @@ const Details = ({ match }) => {
       `https://pokeapi.co/api/v2/pokemon/${match.params.id}`
     );
 
-    setHeroDetails(fetchedData.data);
+    setPokeDetails(fetchedData.data);
   };
 
   const stats = () => {
-    const status = heroDetails.stats.map((stat) => {
+    const status = pokeDetails.stats.map((stat) => {
       return stat.stat.name + " " + stat.base_stat + ", ";
     });
     return status;
   };
-  console.log(heroDetails);
+  console.log(pokeDetails);
   return (
     <div>
       <Nav />
-      {heroDetails.id >= 0 ? (
-        <div key={`details${heroDetails.id}`} id="detailsCard">
+      {pokeDetails.id >= 0 ? (
+        <div key={`details${pokeDetails.id}`} id="detailsCard">
           <img
-            src={heroDetails.sprites.front_default}
-            alt={heroDetails.name}
+            src={pokeDetails.sprites.front_default}
+            alt={pokeDetails.name}
             id="detailsImg"
             draggable={false}
           />
           <div id="details">
-            <h1 id="heroTitle">{heroDetails.name}</h1>
+            <h1 id="heroTitle">{pokeDetails.name}</h1>
             <hr />
             <p className="info">
-              <strong>Peso:</strong> {heroDetails.weight} gr
+              <strong>Peso:</strong> {pokeDetails.weight} gr
             </p>
             <p className="info">
-              <strong>Altura:</strong> {heroDetails.height} pulgadas
+              <strong>Altura:</strong> {pokeDetails.height} pulgadas
             </p>
             <p className="info">
-              <strong>Nombre completo:</strong> {heroDetails.name}
+              <strong>Nombre completo:</strong> {pokeDetails.name}
             </p>
             <p className="info">
-              <strong>Tipo:</strong> {heroDetails.types[0].type.name}
+              <strong>Tipo:</strong> {pokeDetails.types[0].type.name}
             </p>
             <p className="info">
               <strong>Stats:</strong> {stats()}
