@@ -10,10 +10,10 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/challenge-react" exact component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path="/search" exact component={Search} />
           <Route path="/search/:id" exact component={Details} />
-          <Route path="/challenge-react/:id" exact component={Details} />
+          <Route path="/:id" exact component={Details} />
         </Switch>
       </Router>
     </div>

@@ -33,7 +33,7 @@ const Team = () => {
                   Powerstats
                 </button>
                 <Powerstat hero={poke} />
-                <Link to={`challenge-react/${poke.id}`}>
+                <Link to={`/${poke.id}`}>
                   <button className="btn btn-dark btnTeam">Detalles</button>
                 </Link>
                 <button
