@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 const Nav = () => {
   return (
     <nav>
-      <Link to="/challenge-react">
+      <Link to="/">
         <img className="logo" src={logo} alt="pokemon" />
       </Link>
     </nav>
